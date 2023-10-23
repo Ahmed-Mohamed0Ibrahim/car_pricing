@@ -1,20 +1,24 @@
 <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>ML API</title>
+    </head>
     <body>
         <div class="'login">
             <h1>Car Price Prediction</h1>
             
             <!-- Main input for the receiving query to ML-->
-            <form action="{{url_for('Predict')}}"method="post">
-                <input type="number" name="" placeholder="" required="required" /><br>
-                <input type="text" name="" placeholder="" required="required" /><br>
-                <input type="text" name="" placeholder="" required="required" /><br>
-                <input type="text" name="" placeholder="" required="required" /><br>
-                <input type="text" name="" placeholder="" required="required" /><br>
-                <input type="text" name="" placeholder="" required="required" /><br>
-                <input type="text" name="" placeholder="" required="required" /><br>
-                <input type="text" name="" placeholder="" required="required" /><br>
+            <form action="{{url_for('predict')}}"method="post">
+                <input type="text" name="Year" placeholder="Year" required="required" /><br>
+                <input type="text" name="Present_Price" placeholder="Present_Price" required="required" /><br>
+                <input type="text" name="Driven_kms" placeholder="Driven_kms" required="required" /><br>
+                <input type="text" name="Fuel_Type" placeholder="Fuel_Type" required="required" /><br>
+                <input type="text" name="Selling_type" placeholder="Selling_type" required="required" /><br>
+                <input type="text" name="Transmission" placeholder="Transmission" required="required" /><br>
+                <input type="text" name="Owner" placeholder="Owner" required="required" /><br>
+                <br>
                 
-                <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+                <button type="submit" class="btn">Predict</button>
             </form>
 
             <br>
@@ -22,7 +26,9 @@
 
         </div>
 
-        {{Prediction_text}}
+        <div>
+            {{Prediction_text}}
+        </div>
 
     </body>
 </html>
